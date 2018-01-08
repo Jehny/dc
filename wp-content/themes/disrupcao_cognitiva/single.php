@@ -43,27 +43,77 @@
 						<div class="corpo">					
 							<?php the_content(); ?>							
 						</div>
+						<div class="meta_tags">
+							<ul class="list-inline">
+								<?php
+									$posttags = get_the_tags();
+									if ($posttags) {
+									  foreach($posttags as $tag) {
+									     
+									?>
+										<li><a href=""><?php echo $tag->name; ?></a></li>
+									<?php 
+										}
+									}
 
-					</div>
+									?>
+							</ul>
+						</div>
+					</div>					
 			<?php }
 				} 
 			?>
-			<ol class="commentlist">
-				<?php
-					$idc = get_the_ID();
-					//Gather comments for a specific page/post 
-					$comments = get_comments(array(
-						'post_id' => $idc,
-						'status' => 'approve' //Change this to the type of comments to be displayed
-					));
+			<div class="row-fluid">
+				<div class="col-xs-12 col-sm-12 col-md-12 cards">
+					<?php if (have_posts()) {
+							query_posts('post_type=post&orderby=DESC&posts_per_page=3' );
+							 while (have_posts()) {
+							 	the_post();  
+					?>
+					<div class="list_card col-md-4">
+						<a href="<?php echo esc_url(get_permalink(get_the_ID()));?>">
+						<?php 
+							if ( has_post_thumbnail() ) {
+								the_post_thumbnail('full'); 
+							}
+						?>
+						</a>
+						<p class="titulo"><a href="<?php echo esc_url(get_permalink(get_the_ID()));?>"><?php echo the_title(); ?></a></p>
+						<div class="autor">
+							<div class="imagem">
+								<p><?php 
+									echo get_wp_user_avatar(); ?></p>
+							</div>
+							<div class="dados">
+								<p class="nome"><?php the_author(); ?></p>
+								<p class="info"><?php the_time('F j, Y'); ?></p>
+							</div>
+						</div>
+					</div>
+					<?php }
+							wp_reset_query();
+						} 
+					?>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<ol class="commentlist">
+					<?php
+						$idc = get_the_ID();
+						//Gather comments for a specific page/post 
+						$comments = get_comments(array(
+							'post_id' => $idc,
+							'status' => 'approve' //Change this to the type of comments to be displayed
+						));
 
-					//Display the list of comments
-					wp_list_comments(array(
-						'per_page' => 10, //Allow comment pagination
-						'reverse_top_level' => false //Show the latest comments at the top of the list
-					), $comments);
-				?>
-			</ol>
+						//Display the list of comments
+						wp_list_comments(array(
+							'per_page' => 10, //Allow comment pagination
+							'reverse_top_level' => false //Show the latest comments at the top of the list
+						), $comments);
+					?>
+				</ol>
+			</div>
 			<?php if(isset($teste)){ ?>
 				<div class="alert alert-warning alert-dismissible fade in" role="alert">
 			      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
@@ -82,28 +132,6 @@
 			<?php if(isset($teste)){
 				echo $teste;
 				} ?>
-			<!-- <div id="listagem" class="col-xs-12 col-sm-12 col-md-4">
-				<div class="busca">
-					<form action="" method="POST">
-						<input type="text" placeholder="Buscar..." required>
-						<button type="submit" name="busca"><img src="<?php bloginfo('template_url'); ?>/img/lupa.png"></button>
-					</form>
-				</div>
-				<div class="posts_anteriores">
-					<h3><img src="<?php bloginfo('template_url'); ?>/img/ico_post_anteriores.png">Posts anteriores</h3>
-					<?php 
-
-						$loop2 = new WP_Query( array( 'post_type' => 'blog', 'posts_per_page' => 3, 'orderby' => 'DESC' ) );
-						while ( $loop2->have_posts() ) : $loop2->the_post();
-					?>
-					<div class="item">Post de <?php the_time('F'); ?> de <?php the_time('Y'); ?></div>
-
-					<?php  endwhile;
-						wp_reset_query();
-					?>
-				</div>
-
-			</div> -->
 
 		</section>
 		

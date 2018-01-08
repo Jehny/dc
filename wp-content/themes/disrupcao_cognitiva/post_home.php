@@ -42,6 +42,19 @@
 			?>
 		</div>
 	</div>
-	<div class="col-md-4">
+	<div class="col-md-4 sobre">
+		<?php  $page = get_page_by_title('Sobre nós'); 
+				$id = $page->ID; 
+				$resumo = get_field('resumo', $id);
+		?>
+		<div>
+			<div class="img_titulo">
+				<p><?php echo get_the_post_thumbnail( $id, 'thumbnail' ); ?></p>
+				<p class="titulo">Disrupção cognitiva</p>	
+			</div>
+			<p class="resumo"><?php echo $resumo; ?></p>
+			<p class="readmore"><a href="<?php echo esc_url(get_permalink($id));?>">Mais informações...</a></p>
+		</div>
+
 	</div>	
 </div>

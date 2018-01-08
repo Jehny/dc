@@ -9,6 +9,9 @@
 		<script src="<?php bloginfo('template_url'); ?>/js/jquery-3.0.0.min.js"></script>
 		<script src="<?php bloginfo('template_url'); ?>/js/bootstrap.min.js"></script>
 		<script src="<?php bloginfo('template_url'); ?>/js/dc.js"></script>
+		<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/img/ico_logo.png" />
+		<link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/img/ico_logo.png" type="image/x-icon" />
+		<link rel="icon" type="image/ico" href="<?php bloginfo('template_url'); ?>/img/ico_logo.png" />
 
 		<title>Disrupção Cognitiva</title>
 
@@ -19,7 +22,7 @@
 			<div class="container-fluid">
 				<div class="col-md-8 logo">
 					<h1>
-						<a href=""><img src="<?php bloginfo('template_url'); ?>/img/titulo.png"></a>
+						<a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/img/titulo.png"></a>
 					</h1>	
 				</div>
 				<div class="col-md-4 login">
@@ -27,12 +30,5 @@
 				</div>					
 			</div>
 		</header>
-		<div id="menu">
-			<div class="container-fluid">
-				<ul class="list-inline">
-					<li><a href="<?php echo get_home_url(); ?>" title="Home">home</a></li>
-					<li><a href="" title="Sobre">sobre</a></li>
-				</ul>
-			</div>
-		</div>
+		<?php include 'menu.php'; ?>
 

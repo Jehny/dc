@@ -1,0 +1,429 @@
+@CHARSET "UTF-8";
+
+@font-face {
+    font-family: 'helvetica';
+    src: url('fonts/HelveticaNeue.otf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'lucida';
+    src: url('fonts/Lucida Sans Regular.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'open_sans';
+    src: url('fonts/OpenSans-Regular-webfont.eot');
+    src: url('fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('fonts/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body { margin: 0px; background: #FAFAFA; }
+
+/*  CORES
+	Titulo  = rgba(0,0,0,.84)
+	Subtitulo = rgba(0,0,0,.84)
+	Autor = #A06000 home
+	Data post = rgba(0,0,0,.54) home
+	Tag = rgba(0,0,0,.68)
+	Back Tag = rgba(0,0,0,.05)
+	Back Tag Hover = gba(0,0,0,.1)
+	Post corpo = rgba(0,0,0,.84)
+	Read more = rgba(0,0,0,.54)
+	Back Header/Footer =  rgba(255, 165, 0, 1) 
+	Item de menu = #9D5500
+	listagem de artigos = 1px solid rgba(0,0,0,.04)
+	autor listagem artigos = rgba(0,0,0,.9) ; 
+	tempo de lido = rgba(0,0,0,.54)!important 
+	Cor subtitulo listagem = rgba(0,0,0,.76)!important ; 16px!important
+	Autor post = color: rgba(0,0,0,.84)
+	Data post = color: rgba(0,0,0,.54)
+
+	TAMANHOS
+	autor listagem artigos = 16px
+	tempo de lido = 16px
+	Cor subtitulo listagem = 16px
+	Titulo = 21px
+	Titulo artigo = 42px
+	subtitulo = 21px
+	Titulo post listagem = 30px home
+	Subtitulo post listagem = 18px home
+	read more.. = 15px home
+*/
+
+/* HEADER */
+header {
+	/* background: rgba(255, 165, 0, 1); */
+	overflow: hidden;
+}
+
+header a, header a:hover {
+	vertical-align: top;
+	text-decoration: none;
+}
+
+header .login {
+	padding-right: 0;
+	text-align: right;
+	margin-top: 2%;
+}
+
+header .login a, header .login a:hover {
+	color: #A06000;
+	font-size: 14px;
+	font-family: 'lucida';
+    font-weight: 400;
+    border: 1px solid #A06000;
+    padding: 2%;
+    border-radius: 8px;
+
+}
+header .login a:hover {
+	color: #692E00;
+	text-decoration: none;
+}
+
+header .logo { padding-left: 0; }
+#header2 {background: rgba(255, 165, 0, 1);}
+
+.container-fluid {
+    padding-right: 13%;
+	padding-left: 13%;
+}
+
+.container-fluid .page_conteudo {
+    padding-right: 0;
+	padding-left: 0;
+	min-height: 70%;
+}
+
+.container-fluid .page_conteudo h1 {
+	margin-top: 31px;
+	font-family: BlinkMacSystemFont,Roboto,Oxygen,Ubuntu,Cantarell,"open_sans","helvetica",sans-serif
+	font-size: 34px;
+	line-height: 1.04;
+    letter-spacing: -.015em;
+    font-weight: 600;
+    text-decoration: none;
+    color: rgba(0,0,0,.54);
+    text-rendering: optimizeLegibility;
+}
+
+.container-fluid .page_conteudo p {
+	margin-top: 29px;
+	font-size: 21px;
+	font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+}
+
+#banner {
+	background: url('../img/banner.png') 50% 45%; 
+	height: 180px; 
+	width: 100%; 
+}
+
+#banner .texto {}
+#banner .texto h2 {
+	font-family: 'open_sans';
+	color: white;
+	padding-top: 1.5%;
+    font-size: 40px;
+    font-weight: bold;
+}
+#banner .texto h3 {
+	font-family: 'open_sans';
+	color: white;
+	font-size: 23px;
+}
+
+
+#menu { background: rgba(255, 165, 0, 1); height: 8.5%;}
+
+#menu ul {padding-top: 1.4%; }
+
+#menu ul li {border-right: 1px solid #A06000; padding-right: 10px;}
+#menu ul li:last-child {border-right: 0px;}
+
+#menu ul li a { 
+	color: #A06000;
+	font-size: 16px;
+	font-family: 'lucida';
+	text-transform: uppercase;
+}
+
+#menu .itens {padding-left: 0;}
+
+/* LISTAGEM POST HOME */
+.artigo {padding-left: 0; }
+.artigo h4 {
+	font-family: 'lucida';
+	font-size: 18px;
+	color: #8e8e8e;
+	margin-top: 6%;
+	border-bottom: 1px solid #f7f3f3;
+	margin-bottom: 5%;
+	padding-bottom: 2%;
+}
+
+.artigo .posts { 
+	padding-bottom: 3%;
+    margin-bottom: 8%;
+    border-bottom: 1px solid #f7f3f3;
+}
+
+.artigo .posts:last-child {border-bottom: 0px;}
+.posts .autor{}
+.posts .autor .imagem, .list_card .autor .imagem {
+	position: relative;
+    float: left;
+    margin-right: 2%;
+}
+.posts .autor .imagem p img, .list_card .autor .imagem p img {
+	border-radius: 100%;
+	width: 36px;
+	height: 36px;
+}
+.posts .autor .dados {}
+.posts .autor .dados .nome, .list_card .autor .dados .nome {
+	color: #A06000;
+	font-family: BlinkMacSystemFont,Roboto,Oxygen,Ubuntu,Cantarell,"open_sans","helvetica",sans-serif;
+	font-weight: 500;
+    margin-bottom: 0;
+}
+.posts .autor .dados .info, .list_card .autor .dados .info {
+	text-rendering: optimizeLegibility;
+	font-size: 12px;
+	font-family:BlinkMacSystemFont,Roboto,Oxygen,Ubuntu,Cantarell,"open_sans","helvetica",sans-serif;
+	color: #7b7b7b;
+}
+.posts .conteudo {}
+.posts .conteudo .img_destaque {}
+.posts .conteudo img {width: 600px; height: 180px;}
+.posts .conteudo .titulo {margin-top: 31px;}
+.posts .conteudo .titulo a, .posts .conteudo .titulo a:hover{
+	font-family: 'lucida', Geneva,Arial,sans-serif;
+	font-size: 30px;
+	line-height: 1.04;
+    letter-spacing: -.015em;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+}
+.posts .conteudo .subtitulo {
+	font-family: Georgia,Cambria,Times;
+	font-size: 18px;
+	font-weight: bold;
+    font-style: italic;
+}
+.posts .conteudo .read a {
+	text-rendering: optimizeLegibility;
+	font-size: 15px;
+	font-family:BlinkMacSystemFont,Roboto,Oxygen,Ubuntu,Cantarell,"open_sans","helvetica",sans-serif;
+	color: #7b7b7b;
+}
+.posts .conteudo .read a:hover {
+	text-decoration: none;
+	color: black;
+}
+
+.sobre { margin-top: 6.5%;}
+.sobre p img {
+	border-radius: 3px;
+    float: left;
+    margin-right: 6%;
+}
+.sobre .img_titulo {
+	overflow: hidden;
+    margin-bottom: 5%;
+}
+.sobre .titulo {
+	color: rgba(0,0,0,.54);
+	fill: rgba(0,0,0,.54);
+	font-family: BlinkMacSystemFont,Roboto,Oxygen,Ubuntu,Cantarell,"open_sans","helvetica",sans-serif;
+    letter-spacing: 0;
+    font-weight: 400;
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px
+}
+.sobre .resumo {
+	font-size: 14px;
+	color: rgba(0,0,0,.68);
+	fill: rgba(0,0,0,.68);
+	font-family: BlinkMacSystemFont,Roboto,Oxygen,Ubuntu,Cantarell,"open_sans","helvetica",sans-serif;
+    letter-spacing: 0;
+    font-weight: 400;
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+.sobre .readmore a {
+	color: #925800;
+	text-decoration: none;
+	font-size: 12px;
+	font-family: BlinkMacSystemFont,Roboto,Oxygen,Ubuntu,Cantarell,"open_sans","helvetica",sans-serif;
+    letter-spacing: 0;
+    font-weight: 400;
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* LISTAGEM POST CONSULTA */
+.cards { padding-left: 0; margin-top: 8%;     margin-bottom: 6%;}
+.list_card {
+	overflow: hidden;
+	padding: 0;
+    width: 32%;
+    margin-right: 2%;
+    background: white;
+    border-radius: 5px;
+    min-height: 315px;
+    position: relative;
+}
+
+.list_card:last-child {
+	margin-right: 0;
+}
+
+.list_card img {
+	width: 100%;
+	height: 101px;
+}
+
+.list_card .titulo {margin-top: 5%; margin-bottom: 13%; padding: 2% 3% 2% 5%;}
+.list_card .titulo a, .list_card .titulo a:hover{
+	font-family:"lucida",Geneva,Arial,sans-serif;
+	font-size: 16px;
+    font-weight: bold;
+    letter-spacing: -0.5;
+    text-decoration: none;
+    color: black;
+}
+
+.list_card .autor { 
+	padding-left: 5%; 
+	padding-bottom: 2%;
+	position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+
+/* DETALHE POST */
+.detalhe_post {
+	max-width: 740px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: auto;
+    padding-top: 3%;
+}
+
+.detalhe_post .titulo {
+	font-family: 'lucida', Geneva,Arial,sans-serif;
+	font-size: 34px;
+	line-height: 1.04;
+    letter-spacing: -.015em;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    text-rendering: optimizeLegibility;
+}
+.detalhe_post .subtitulo {
+	font-family: Georgia,Cambria,Times;
+	font-size: 18px;
+	font-weight: bold;
+    font-style: italic;
+    text-rendering: optimizeLegibility;
+	margin-top: 10px;
+}
+.detalhe_post .corpo {
+	margin-top: 29px;
+	font-size: 21px;
+	font-family: Georgia,Cambria,"Times New Roman",Times,serif;
+	padding-bottom: 4%;
+}
+
+.detalhe_post .corpo p>img {
+	text-align: center;
+}
+
+.meta_tags li {
+	padding: 1% 1% 1% 1% !important;
+    background: #ececec;
+    border-radius: 3px;
+    margin-right: 0.5%;
+}
+
+.meta_tags li:hover { background: #e2e1e1; }
+
+.meta_tags li a, .meta_tags li a:hover {
+	font-family: BlinkMacSystemFont,Roboto,Oxygen,Ubuntu,Cantarell,"open_sans","helvetica",sans-serif;
+	font-size: 13px;
+	color: rgba(58, 58, 58, 0.54);
+	font-weight: 600;
+	text-rendering: optimizeLegibility;
+	text-decoration: none;
+}
+
+/*COMENTARIOS*/
+.commentlist .commentmetadata a {
+    color: #CDCDCD;
+    font-family: lucida;
+}
+.comment-form-comment label {display: none;}
+
+.commentlist p {
+	padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 1%;
+    margin-bottom: 0;
+    background: #f7f7f7;
+    border-radius: 7px;
+    width: 80%;
+}
+.reply a {
+	color: #CDCDCD;
+    font-family: 'lucida', Geneva,Arial,sans-serif;
+}
+#commentform .logged-in-as a {
+	color: #CDCDCD;
+    font-family: 'lucida', Geneva,Arial,sans-serif;
+}
+
+#commentform .comment-notes {
+    color: #8c8b8b;
+}
+
+.comment-form-comment textarea {
+	height: 90px;
+    width: 80%;
+    border-radius: 7px;
+    background: #f1f1f1;
+    border: none;
+}
+.commentlist {
+    padding-left: 0;
+    margin-top: 5%;
+}
+
+#commentform #author, #commentform #email {
+    width: 45%;
+    border-radius: 5px;
+    border: 1px solid #CDCDCD;
+    height: 30px;
+}
+
+#commentform .comment-form-url {display: none;}
+
+/* FOOTER */
+footer {
+	background: rgba(255, 165, 0, 1);
+	height: 70px;
+}
