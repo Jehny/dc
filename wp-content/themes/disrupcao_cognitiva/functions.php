@@ -119,4 +119,13 @@ function my_custom_logo() {
 		</style>';
 }
 
+// Redirecionamento de páginas
+function redirect_to( $location = NULL ) {
+	if($location != NUll) {
+		header("Location: {$location}");
+		exit;
+	}
+}
+
+
 ?>

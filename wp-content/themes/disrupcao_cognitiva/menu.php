@@ -19,6 +19,10 @@
 	); 
 	$pages = get_pages($args); 
 
+if(isset($_POST['submit'])){
+	$word = $_POST['pesquisa'];
+	redirect_to("listagem?key=".$word);
+}
 
 ?>
 
@@ -31,8 +35,50 @@
 			<li><a href="<?php echo get_page_link( $page->ID )?>" title="Sobre"><?php echo $page->post_title; ?></a></li>
 			<?php } ?>
 		</ul>
-		<div class="busca">
-			
+
+		<!-- Busca  e redes sociais-->
+		<?php 
+
+				$args = array(
+					'posts_per_page'   => 3,
+					'offset'           => 0,
+					'category'         => '',
+					'category_name'    => '',
+					'orderby'          => '',
+					'order'            => 'ASC',
+					'include'          => '',
+					'exclude'          => '',
+					'meta_key'         => '',
+					'meta_value'       => '',
+					'post_type'        => 'redes_sociais',
+					'post_mime_type'   => '',
+					'post_parent'      => '',
+					'author'	   	=> '',
+					'post_status'      => 'publish',
+					'suppress_filters' => true 
+				);
+				$redes = get_posts($args);
+
+		?>
+		<div class="busca col-md-4">
+			<div class="search col-md-8">
+				<form action="" method="POST" accept-charset="utf-8">
+					<input type="text" name="pesquisa" title="pesquisa" placeholder="Consultar">
+					<button type="submit" name="submit"><i class="icon-search3"></i></button>
+				</form>
+			</div>
+			<div class="redes col-md-4">
+				<ul class="list-inline">
+					<?php if($redes){ 
+							foreach ($redes as $r){
+								$icone = get_field('classe_icone', $r->ID);
+								$link = get_field('link', $r->ID);
+					?>
+					<li><a href="<?php echo $link; ?>"><i class="<?php echo $icone; ?>"></i></a></li>
+					<?php 	}
+						}	 ?>
+				</ul>
+			</div>
 		</div>
 	</div>
 

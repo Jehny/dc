@@ -4,6 +4,8 @@
 	if(isset($_POST['submit'])){
 		$teste = "<input type='hidden' id='enviado' />";
 		$message = "Seu comentário foi enviado com sucesso!";
+	}else {
+		echo "não encontrou o submit";
 	}
 
 ?>
@@ -20,6 +22,7 @@
 			?>
 					<div class="detalhe_post">
 						<div class="posts">
+							<!-- Autor -->
 							<div class="autor">
 								<div class="imagem">
 									<p><?php 
@@ -37,12 +40,13 @@
 								<h1 class="titulo"> <?php echo the_title(); ?>
 								 </h1>
 								 <p class="subtitulo"><?php echo $subtitulo; ?></p>
-								<!-- <p>Posted by: <?php the_author(); ?> - <?php the_time('d/m/Y'); ?></p> -->
 							</div>
 						</div>
 						<div class="corpo">					
 							<?php the_content(); ?>							
 						</div>
+
+						<!-- Tags -->
 						<div class="meta_tags">
 							<ul class="list-inline">
 								<?php
@@ -51,7 +55,7 @@
 									  foreach($posttags as $tag) {
 									     
 									?>
-										<li><a href=""><?php echo $tag->name; ?></a></li>
+										<li><a href="<?php echo '../listagem?tag='.$tag->slug; ?>"><?php echo $tag->name; ?></a></li>
 									<?php 
 										}
 									}
@@ -63,6 +67,8 @@
 			<?php }
 				} 
 			?>
+
+			<!-- Listagem de post -->
 			<div class="row-fluid">
 				<div class="col-xs-12 col-sm-12 col-md-12 cards">
 					<?php if (have_posts()) {
@@ -96,6 +102,8 @@
 					?>
 				</div>
 			</div>
+
+			<!-- Comnetários -->
 			<div class="row-fluid">
 				<ol class="commentlist">
 					<?php

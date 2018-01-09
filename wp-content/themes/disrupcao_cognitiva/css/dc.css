@@ -158,6 +158,52 @@ header .logo { padding-left: 0; }
 
 #menu .itens {padding-left: 0;}
 
+.busca {padding-top: 1.4%;}
+.busca .search{}
+.busca .search input {
+	width: 79%;
+	width: 79%;
+	border: none;
+	color: #A06000;
+	background: orange;
+	border-bottom: 1px solid #ea8f06;
+}
+.busca .search input ::-webkit-input-placeholder {
+   color: #A06000;
+   font: 12px verdana, arial, sans-serif;
+}
+
+.busca .search input :-moz-placeholder {
+   color: #A06000;
+   font: 12px verdana, arial, sans-serif;
+}
+
+.busca .search input ::-moz-placeholder {
+   color: #A06000;  
+   font: 12px verdana, arial, sans-serif;
+}
+
+.busca .search input :-ms-input-placeholder {  
+   color: #A06000;  
+   font: 12px verdana, arial, sans-serif;
+}
+
+.busca .search input:focus { border: none; }
+.busca .search button {
+	background: transparent;
+	border: none;
+	color: #A06000;
+}
+.busca .search button i {
+	font-size: 1.2em;
+	vertical-align: middle;
+}
+
+.busca .redes {}
+.busca .redes li { padding-right: 0 !important; border-right: none !important; }
+.busca .redes li a, .busca .redes li a:hover { text-decoration: none; }
+.busca .redes li a i {font-size: 1.5em;}
+
 /* LISTAGEM POST HOME */
 .artigo {padding-left: 0; }
 .artigo h4 {
@@ -275,8 +321,16 @@ header .logo { padding-left: 0; }
     -webkit-font-smoothing: antialiased;
 }
 
+.sobre .links_contato {}
+.sobre .links_contato li {}
+.sobre .links_contato li a, .sobre .links_contato li a:hover{ text-decoration: none; }
+.sobre .links_contato li i {
+	color: #525252;
+    font-size: 1.5em;
+}
+
 /* LISTAGEM POST CONSULTA */
-.cards { padding-left: 0; margin-top: 8%;     margin-bottom: 6%;}
+.cards { padding-left: 0; margin-top: 4%;     margin-bottom: 6%;}
 .list_card {
 	overflow: hidden;
 	padding: 0;
@@ -314,6 +368,29 @@ header .logo { padding-left: 0; }
     width: 100%;
     bottom: 0;
 }
+
+.listagem_busca { margin-top: 5%; padding-bottom: 2%;
+    border-bottom: 1px solid #e8e6e6;}
+.listagem_busca .titulo {
+	font-family: 'lucida', Geneva,Arial,sans-serif;
+	font-size: 30px;
+	line-height: 1.04;
+    letter-spacing: -.015em;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+}
+.listagem_busca .tag {
+	font-family: 'lucida', Geneva,Arial,sans-serif;
+	font-size: 18px;
+	line-height: 1.04;
+    letter-spacing: -.015em;
+    font-weight: 600;
+    text-decoration: none;
+    color: #888888;
+    margin-top: 3%;
+}
+.sem_result {}
 
 
 /* DETALHE POST */
@@ -384,7 +461,7 @@ header .logo { padding-left: 0; }
     padding-bottom: 1%;
     padding-left: 1%;
     margin-bottom: 0;
-    background: #f7f7f7;
+    background: #ffffff;
     border-radius: 7px;
     width: 80%;
 }
@@ -426,4 +503,5 @@ header .logo { padding-left: 0; }
 footer {
 	background: rgba(255, 165, 0, 1);
 	height: 70px;
+	margin-top: 5%;
 }

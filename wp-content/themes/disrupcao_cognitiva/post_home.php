@@ -46,6 +46,7 @@
 		<?php  $page = get_page_by_title('Sobre nós'); 
 				$id = $page->ID; 
 				$resumo = get_field('resumo', $id);
+				$email = get_field('email_contato', $id);
 		?>
 		<div>
 			<div class="img_titulo">
@@ -54,6 +55,43 @@
 			</div>
 			<p class="resumo"><?php echo $resumo; ?></p>
 			<p class="readmore"><a href="<?php echo esc_url(get_permalink($id));?>">Mais informações...</a></p>
+		</div>
+
+		<?php 
+
+				$args = array(
+					'posts_per_page'   => 3,
+					'offset'           => 0,
+					'category'         => '',
+					'category_name'    => '',
+					'orderby'          => '',
+					'order'            => 'ASC',
+					'include'          => '',
+					'exclude'          => '',
+					'meta_key'         => '',
+					'meta_value'       => '',
+					'post_type'        => 'redes_sociais',
+					'post_mime_type'   => '',
+					'post_parent'      => '',
+					'author'	   	=> '',
+					'post_status'      => 'publish',
+					'suppress_filters' => true 
+				);
+				$redes = get_posts($args);
+
+		?>
+		<div class="links_contato">
+			<ul class="list-inline">
+				<li><a href="mailto:<?php echo $email; ?>"><i class="icon-envelope"></i></a></li>
+				<?php if($redes){ 
+						foreach ($redes as $r){
+							$icone = get_field('classe_icone', $r->ID);
+							$link = get_field('link', $r->ID);
+					?>
+						<li><a href="<?php echo $link; ?>"><i class="<?php echo $icone; ?>"></i></a></li>
+					<?php 	}
+						}	 ?>
+			</ul>
 		</div>
 
 	</div>	
