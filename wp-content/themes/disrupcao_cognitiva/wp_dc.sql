@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 09-Jan-2018 às 04:13
+-- Generation Time: 11-Jan-2018 às 02:45
 -- Versão do servidor: 10.1.10-MariaDB
 -- PHP Version: 7.0.4
 
@@ -32,6 +32,18 @@ CREATE TABLE `wp_commentmeta` (
   `meta_key` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `meta_value` longtext COLLATE utf8mb4_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `wp_commentmeta`
+--
+
+INSERT INTO `wp_commentmeta` (`meta_id`, `comment_id`, `meta_key`, `meta_value`) VALUES
+(1, 5, '_wp_trash_meta_status', '0'),
+(2, 5, '_wp_trash_meta_time', '1515621536'),
+(3, 4, '_wp_trash_meta_status', '0'),
+(4, 4, '_wp_trash_meta_time', '1515621537'),
+(5, 3, '_wp_trash_meta_status', '0'),
+(6, 3, '_wp_trash_meta_time', '1515621537');
 
 -- --------------------------------------------------------
 
@@ -64,9 +76,9 @@ CREATE TABLE `wp_comments` (
 INSERT INTO `wp_comments` (`comment_ID`, `comment_post_ID`, `comment_author`, `comment_author_email`, `comment_author_url`, `comment_author_IP`, `comment_date`, `comment_date_gmt`, `comment_content`, `comment_karma`, `comment_approved`, `comment_agent`, `comment_type`, `comment_parent`, `user_id`) VALUES
 (1, 1, 'Um comentarista do WordPress', 'wapuu@wordpress.example', 'https://wordpress.org/', '', '2018-01-04 23:35:55', '2018-01-05 01:35:55', 'Olá, isso é um comentário.\nPara começar a moderar, editar e deletar comentários, visite a tela de Comentários no painel.\nAvatares de comentaristas vêm a partir do <a href="https://gravatar.com">Gravatar</a>.', 0, 'post-trashed', '', '', 0, 0),
 (2, 4, 'jehny', 'jehnyffen@gmail.com', '', '::1', '2018-01-07 01:05:46', '2018-01-07 03:05:46', 'teste', 0, '1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36', '', 0, 1),
-(3, 4, 'tese', 'teste@teste.com', '', '::1', '2018-01-07 01:06:33', '2018-01-07 03:06:33', 'Teste2', 0, '0', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36', '', 0, 0),
-(4, 4, 'Teste2', 'teste@teste.com', '', '::1', '2018-01-07 01:08:53', '2018-01-07 03:08:53', 'teste2', 0, '0', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36', '', 0, 0),
-(5, 4, 'teste', 'teste@teste.com', '', '::1', '2018-01-07 01:19:37', '2018-01-07 03:19:37', 'tes', 0, '0', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36', '', 0, 0);
+(3, 4, 'tese', 'teste@teste.com', '', '::1', '2018-01-07 01:06:33', '2018-01-07 03:06:33', 'Teste2', 0, 'trash', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36', '', 0, 0),
+(4, 4, 'Teste2', 'teste@teste.com', '', '::1', '2018-01-07 01:08:53', '2018-01-07 03:08:53', 'teste2', 0, 'trash', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36', '', 0, 0),
+(5, 4, 'teste', 'teste@teste.com', '', '::1', '2018-01-07 01:19:37', '2018-01-07 03:19:37', 'tes', 0, 'trash', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -217,7 +229,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (107, 'widget_tag_cloud', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
 (108, 'widget_nav_menu', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
 (109, 'widget_custom_html', 'a:1:{s:12:"_multiwidget";i:1;}', 'yes'),
-(110, 'cron', 'a:4:{i:1515504957;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1515545330;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1515548186;a:2:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}s:25:"delete_expired_transients";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
+(110, 'cron', 'a:4:{i:1515677757;a:3:{s:16:"wp_version_check";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:17:"wp_update_plugins";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}s:16:"wp_update_themes";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:10:"twicedaily";s:4:"args";a:0:{}s:8:"interval";i:43200;}}}i:1515718130;a:1:{s:30:"wp_scheduled_auto_draft_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}i:1515720986;a:2:{s:19:"wp_scheduled_delete";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}s:25:"delete_expired_transients";a:1:{s:32:"40cd750bba9870f18aada2478b24840a";a:3:{s:8:"schedule";s:5:"daily";s:4:"args";a:0:{}s:8:"interval";i:86400;}}}s:7:"version";i:2;}', 'yes'),
 (111, 'theme_mods_twentyseventeen', 'a:2:{s:18:"custom_css_post_id";i:-1;s:16:"sidebars_widgets";a:2:{s:4:"time";i:1515116187;s:4:"data";a:4:{s:19:"wp_inactive_widgets";a:0:{}s:9:"sidebar-1";a:6:{i:0;s:8:"search-2";i:1;s:14:"recent-posts-2";i:2;s:17:"recent-comments-2";i:3;s:10:"archives-2";i:4;s:12:"categories-2";i:5;s:6:"meta-2";}s:9:"sidebar-2";a:0:{}s:9:"sidebar-3";a:0:{}}}}', 'yes'),
 (122, '_site_transient_timeout_browser_da4804949398f905dcef757ac82cf2c1', '1515720972', 'no'),
 (123, '_site_transient_browser_da4804949398f905dcef757ac82cf2c1', 'a:10:{s:4:"name";s:6:"Chrome";s:7:"version";s:12:"63.0.3239.84";s:8:"platform";s:7:"Windows";s:10:"update_url";s:29:"https://www.google.com/chrome";s:7:"img_src";s:43:"http://s.w.org/images/browsers/chrome.png?1";s:11:"img_src_ssl";s:44:"https://s.w.org/images/browsers/chrome.png?1";s:15:"current_version";s:2:"18";s:7:"upgrade";b:0;s:8:"insecure";b:0;s:6:"mobile";b:0;}', 'no'),
@@ -245,11 +257,11 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (238, 'wp_user_avatar_default_avatar_updated', '1', 'yes'),
 (239, 'wp_user_avatar_users_updated', '1', 'yes'),
 (240, 'wp_user_avatar_media_updated', '1', 'yes'),
-(281, '_site_transient_timeout_theme_roots', '1515464504', 'no'),
-(282, '_site_transient_theme_roots', 'a:4:{s:19:"disrupcao_cognitiva";s:7:"/themes";s:13:"twentyfifteen";s:7:"/themes";s:15:"twentyseventeen";s:7:"/themes";s:13:"twentysixteen";s:7:"/themes";}', 'no'),
-(284, '_site_transient_update_core', 'O:8:"stdClass":4:{s:7:"updates";a:1:{i:0;O:8:"stdClass":10:{s:8:"response";s:6:"latest";s:8:"download";s:65:"https://downloads.wordpress.org/release/pt_BR/wordpress-4.9.1.zip";s:6:"locale";s:5:"pt_BR";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:65:"https://downloads.wordpress.org/release/pt_BR/wordpress-4.9.1.zip";s:10:"no_content";b:0;s:11:"new_bundled";b:0;s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:5:"4.9.1";s:7:"version";s:5:"4.9.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.7";s:15:"partial_version";s:0:"";}}s:12:"last_checked";i:1515462709;s:15:"version_checked";s:5:"4.9.1";s:12:"translations";a:0:{}}', 'no'),
-(285, '_site_transient_update_themes', 'O:8:"stdClass":4:{s:12:"last_checked";i:1515462714;s:7:"checked";a:4:{s:19:"disrupcao_cognitiva";s:3:"1.0";s:13:"twentyfifteen";s:3:"1.9";s:15:"twentyseventeen";s:3:"1.4";s:13:"twentysixteen";s:3:"1.4";}s:8:"response";a:0:{}s:12:"translations";a:3:{i:0;a:7:{s:4:"type";s:5:"theme";s:4:"slug";s:13:"twentyfifteen";s:8:"language";s:5:"pt_BR";s:7:"version";s:3:"1.9";s:7:"updated";s:19:"2016-12-04 18:11:06";s:7:"package";s:77:"https://downloads.wordpress.org/translation/theme/twentyfifteen/1.9/pt_BR.zip";s:10:"autoupdate";b:1;}i:1;a:7:{s:4:"type";s:5:"theme";s:4:"slug";s:15:"twentyseventeen";s:8:"language";s:5:"pt_BR";s:7:"version";s:3:"1.4";s:7:"updated";s:19:"2017-11-16 19:35:29";s:7:"package";s:79:"https://downloads.wordpress.org/translation/theme/twentyseventeen/1.4/pt_BR.zip";s:10:"autoupdate";b:1;}i:2;a:7:{s:4:"type";s:5:"theme";s:4:"slug";s:13:"twentysixteen";s:8:"language";s:5:"pt_BR";s:7:"version";s:3:"1.4";s:7:"updated";s:19:"2017-01-29 00:58:00";s:7:"package";s:77:"https://downloads.wordpress.org/translation/theme/twentysixteen/1.4/pt_BR.zip";s:10:"autoupdate";b:1;}}}', 'no'),
-(286, '_site_transient_update_plugins', 'O:8:"stdClass":4:{s:12:"last_checked";i:1515462712;s:8:"response";a:1:{s:19:"akismet/akismet.php";O:8:"stdClass":11:{s:2:"id";s:21:"w.org/plugins/akismet";s:4:"slug";s:7:"akismet";s:6:"plugin";s:19:"akismet/akismet.php";s:11:"new_version";s:5:"4.0.2";s:3:"url";s:38:"https://wordpress.org/plugins/akismet/";s:7:"package";s:56:"https://downloads.wordpress.org/plugin/akismet.4.0.2.zip";s:5:"icons";a:3:{s:2:"1x";s:59:"https://ps.w.org/akismet/assets/icon-128x128.png?rev=969272";s:2:"2x";s:59:"https://ps.w.org/akismet/assets/icon-256x256.png?rev=969272";s:7:"default";s:59:"https://ps.w.org/akismet/assets/icon-256x256.png?rev=969272";}s:7:"banners";a:2:{s:2:"1x";s:61:"https://ps.w.org/akismet/assets/banner-772x250.jpg?rev=479904";s:7:"default";s:61:"https://ps.w.org/akismet/assets/banner-772x250.jpg?rev=479904";}s:11:"banners_rtl";a:0:{}s:6:"tested";s:5:"4.9.1";s:13:"compatibility";O:8:"stdClass":0:{}}}s:12:"translations";a:2:{i:0;a:7:{s:4:"type";s:6:"plugin";s:4:"slug";s:7:"akismet";s:8:"language";s:5:"pt_BR";s:7:"version";s:5:"3.3.4";s:7:"updated";s:19:"2017-05-28 18:24:19";s:7:"package";s:74:"https://downloads.wordpress.org/translation/plugin/akismet/3.3.4/pt_BR.zip";s:10:"autoupdate";b:1;}i:1;a:7:{s:4:"type";s:6:"plugin";s:4:"slug";s:16:"tinymce-advanced";s:8:"language";s:5:"pt_BR";s:7:"version";s:5:"4.6.7";s:7:"updated";s:19:"2017-05-12 18:10:39";s:7:"package";s:83:"https://downloads.wordpress.org/translation/plugin/tinymce-advanced/4.6.7/pt_BR.zip";s:10:"autoupdate";b:1;}}s:9:"no_update";a:4:{s:30:"advanced-custom-fields/acf.php";O:8:"stdClass":9:{s:2:"id";s:36:"w.org/plugins/advanced-custom-fields";s:4:"slug";s:22:"advanced-custom-fields";s:6:"plugin";s:30:"advanced-custom-fields/acf.php";s:11:"new_version";s:6:"4.4.12";s:3:"url";s:53:"https://wordpress.org/plugins/advanced-custom-fields/";s:7:"package";s:72:"https://downloads.wordpress.org/plugin/advanced-custom-fields.4.4.12.zip";s:5:"icons";a:3:{s:2:"1x";s:75:"https://ps.w.org/advanced-custom-fields/assets/icon-128x128.png?rev=1082746";s:2:"2x";s:75:"https://ps.w.org/advanced-custom-fields/assets/icon-256x256.png?rev=1082746";s:7:"default";s:75:"https://ps.w.org/advanced-custom-fields/assets/icon-256x256.png?rev=1082746";}s:7:"banners";a:3:{s:2:"2x";s:78:"https://ps.w.org/advanced-custom-fields/assets/banner-1544x500.jpg?rev=1729099";s:2:"1x";s:77:"https://ps.w.org/advanced-custom-fields/assets/banner-772x250.jpg?rev=1729102";s:7:"default";s:78:"https://ps.w.org/advanced-custom-fields/assets/banner-1544x500.jpg?rev=1729099";}s:11:"banners_rtl";a:0:{}}s:9:"hello.php";O:8:"stdClass":9:{s:2:"id";s:25:"w.org/plugins/hello-dolly";s:4:"slug";s:11:"hello-dolly";s:6:"plugin";s:9:"hello.php";s:11:"new_version";s:3:"1.6";s:3:"url";s:42:"https://wordpress.org/plugins/hello-dolly/";s:7:"package";s:58:"https://downloads.wordpress.org/plugin/hello-dolly.1.6.zip";s:5:"icons";a:3:{s:2:"1x";s:63:"https://ps.w.org/hello-dolly/assets/icon-128x128.jpg?rev=969907";s:2:"2x";s:63:"https://ps.w.org/hello-dolly/assets/icon-256x256.jpg?rev=969907";s:7:"default";s:63:"https://ps.w.org/hello-dolly/assets/icon-256x256.jpg?rev=969907";}s:7:"banners";a:2:{s:2:"1x";s:65:"https://ps.w.org/hello-dolly/assets/banner-772x250.png?rev=478342";s:7:"default";s:65:"https://ps.w.org/hello-dolly/assets/banner-772x250.png?rev=478342";}s:11:"banners_rtl";a:0:{}}s:37:"tinymce-advanced/tinymce-advanced.php";O:8:"stdClass":9:{s:2:"id";s:30:"w.org/plugins/tinymce-advanced";s:4:"slug";s:16:"tinymce-advanced";s:6:"plugin";s:37:"tinymce-advanced/tinymce-advanced.php";s:11:"new_version";s:5:"4.6.7";s:3:"url";s:47:"https://wordpress.org/plugins/tinymce-advanced/";s:7:"package";s:65:"https://downloads.wordpress.org/plugin/tinymce-advanced.4.6.7.zip";s:5:"icons";a:3:{s:2:"1x";s:68:"https://ps.w.org/tinymce-advanced/assets/icon-128x128.png?rev=971511";s:2:"2x";s:68:"https://ps.w.org/tinymce-advanced/assets/icon-256x256.png?rev=971511";s:7:"default";s:68:"https://ps.w.org/tinymce-advanced/assets/icon-256x256.png?rev=971511";}s:7:"banners";a:2:{s:2:"1x";s:70:"https://ps.w.org/tinymce-advanced/assets/banner-772x250.png?rev=894078";s:7:"default";s:70:"https://ps.w.org/tinymce-advanced/assets/banner-772x250.png?rev=894078";}s:11:"banners_rtl";a:0:{}}s:33:"wp-user-avatar/wp-user-avatar.php";O:8:"stdClass":9:{s:2:"id";s:28:"w.org/plugins/wp-user-avatar";s:4:"slug";s:14:"wp-user-avatar";s:6:"plugin";s:33:"wp-user-avatar/wp-user-avatar.php";s:11:"new_version";s:5:"2.0.9";s:3:"url";s:45:"https://wordpress.org/plugins/wp-user-avatar/";s:7:"package";s:57:"https://downloads.wordpress.org/plugin/wp-user-avatar.zip";s:5:"icons";a:3:{s:2:"1x";s:67:"https://ps.w.org/wp-user-avatar/assets/icon-128x128.png?rev=1755722";s:2:"2x";s:67:"https://ps.w.org/wp-user-avatar/assets/icon-256x256.png?rev=1755722";s:7:"default";s:67:"https://ps.w.org/wp-user-avatar/assets/icon-256x256.png?rev=1755722";}s:7:"banners";a:2:{s:2:"1x";s:68:"https://ps.w.org/wp-user-avatar/assets/banner-772x250.png?rev=882713";s:7:"default";s:68:"https://ps.w.org/wp-user-avatar/assets/banner-772x250.png?rev=882713";}s:11:"banners_rtl";a:0:{}}}}', 'no');
+(302, '_site_transient_timeout_theme_roots', '1515636436', 'no'),
+(303, '_site_transient_theme_roots', 'a:4:{s:19:"disrupcao_cognitiva";s:7:"/themes";s:13:"twentyfifteen";s:7:"/themes";s:15:"twentyseventeen";s:7:"/themes";s:13:"twentysixteen";s:7:"/themes";}', 'no'),
+(305, '_site_transient_update_core', 'O:8:"stdClass":4:{s:7:"updates";a:1:{i:0;O:8:"stdClass":10:{s:8:"response";s:6:"latest";s:8:"download";s:65:"https://downloads.wordpress.org/release/pt_BR/wordpress-4.9.1.zip";s:6:"locale";s:5:"pt_BR";s:8:"packages";O:8:"stdClass":5:{s:4:"full";s:65:"https://downloads.wordpress.org/release/pt_BR/wordpress-4.9.1.zip";s:10:"no_content";b:0;s:11:"new_bundled";b:0;s:7:"partial";b:0;s:8:"rollback";b:0;}s:7:"current";s:5:"4.9.1";s:7:"version";s:5:"4.9.1";s:11:"php_version";s:5:"5.2.4";s:13:"mysql_version";s:3:"5.0";s:11:"new_bundled";s:3:"4.7";s:15:"partial_version";s:0:"";}}s:12:"last_checked";i:1515634641;s:15:"version_checked";s:5:"4.9.1";s:12:"translations";a:0:{}}', 'no'),
+(306, '_site_transient_update_themes', 'O:8:"stdClass":4:{s:12:"last_checked";i:1515634645;s:7:"checked";a:4:{s:19:"disrupcao_cognitiva";s:3:"1.0";s:13:"twentyfifteen";s:3:"1.9";s:15:"twentyseventeen";s:3:"1.4";s:13:"twentysixteen";s:3:"1.4";}s:8:"response";a:0:{}s:12:"translations";a:3:{i:0;a:7:{s:4:"type";s:5:"theme";s:4:"slug";s:13:"twentyfifteen";s:8:"language";s:5:"pt_BR";s:7:"version";s:3:"1.9";s:7:"updated";s:19:"2016-12-04 18:11:06";s:7:"package";s:77:"https://downloads.wordpress.org/translation/theme/twentyfifteen/1.9/pt_BR.zip";s:10:"autoupdate";b:1;}i:1;a:7:{s:4:"type";s:5:"theme";s:4:"slug";s:15:"twentyseventeen";s:8:"language";s:5:"pt_BR";s:7:"version";s:3:"1.4";s:7:"updated";s:19:"2017-11-16 19:35:29";s:7:"package";s:79:"https://downloads.wordpress.org/translation/theme/twentyseventeen/1.4/pt_BR.zip";s:10:"autoupdate";b:1;}i:2;a:7:{s:4:"type";s:5:"theme";s:4:"slug";s:13:"twentysixteen";s:8:"language";s:5:"pt_BR";s:7:"version";s:3:"1.4";s:7:"updated";s:19:"2017-01-29 00:58:00";s:7:"package";s:77:"https://downloads.wordpress.org/translation/theme/twentysixteen/1.4/pt_BR.zip";s:10:"autoupdate";b:1;}}}', 'no'),
+(307, '_site_transient_update_plugins', 'O:8:"stdClass":4:{s:12:"last_checked";i:1515634643;s:8:"response";a:1:{s:19:"akismet/akismet.php";O:8:"stdClass":11:{s:2:"id";s:21:"w.org/plugins/akismet";s:4:"slug";s:7:"akismet";s:6:"plugin";s:19:"akismet/akismet.php";s:11:"new_version";s:5:"4.0.2";s:3:"url";s:38:"https://wordpress.org/plugins/akismet/";s:7:"package";s:56:"https://downloads.wordpress.org/plugin/akismet.4.0.2.zip";s:5:"icons";a:3:{s:2:"1x";s:59:"https://ps.w.org/akismet/assets/icon-128x128.png?rev=969272";s:2:"2x";s:59:"https://ps.w.org/akismet/assets/icon-256x256.png?rev=969272";s:7:"default";s:59:"https://ps.w.org/akismet/assets/icon-256x256.png?rev=969272";}s:7:"banners";a:2:{s:2:"1x";s:61:"https://ps.w.org/akismet/assets/banner-772x250.jpg?rev=479904";s:7:"default";s:61:"https://ps.w.org/akismet/assets/banner-772x250.jpg?rev=479904";}s:11:"banners_rtl";a:0:{}s:6:"tested";s:5:"4.9.1";s:13:"compatibility";O:8:"stdClass":0:{}}}s:12:"translations";a:2:{i:0;a:7:{s:4:"type";s:6:"plugin";s:4:"slug";s:7:"akismet";s:8:"language";s:5:"pt_BR";s:7:"version";s:5:"3.3.4";s:7:"updated";s:19:"2017-05-28 18:24:19";s:7:"package";s:74:"https://downloads.wordpress.org/translation/plugin/akismet/3.3.4/pt_BR.zip";s:10:"autoupdate";b:1;}i:1;a:7:{s:4:"type";s:6:"plugin";s:4:"slug";s:16:"tinymce-advanced";s:8:"language";s:5:"pt_BR";s:7:"version";s:5:"4.6.7";s:7:"updated";s:19:"2017-05-12 18:10:39";s:7:"package";s:83:"https://downloads.wordpress.org/translation/plugin/tinymce-advanced/4.6.7/pt_BR.zip";s:10:"autoupdate";b:1;}}s:9:"no_update";a:4:{s:30:"advanced-custom-fields/acf.php";O:8:"stdClass":9:{s:2:"id";s:36:"w.org/plugins/advanced-custom-fields";s:4:"slug";s:22:"advanced-custom-fields";s:6:"plugin";s:30:"advanced-custom-fields/acf.php";s:11:"new_version";s:6:"4.4.12";s:3:"url";s:53:"https://wordpress.org/plugins/advanced-custom-fields/";s:7:"package";s:72:"https://downloads.wordpress.org/plugin/advanced-custom-fields.4.4.12.zip";s:5:"icons";a:3:{s:2:"1x";s:75:"https://ps.w.org/advanced-custom-fields/assets/icon-128x128.png?rev=1082746";s:2:"2x";s:75:"https://ps.w.org/advanced-custom-fields/assets/icon-256x256.png?rev=1082746";s:7:"default";s:75:"https://ps.w.org/advanced-custom-fields/assets/icon-256x256.png?rev=1082746";}s:7:"banners";a:3:{s:2:"2x";s:78:"https://ps.w.org/advanced-custom-fields/assets/banner-1544x500.jpg?rev=1729099";s:2:"1x";s:77:"https://ps.w.org/advanced-custom-fields/assets/banner-772x250.jpg?rev=1729102";s:7:"default";s:78:"https://ps.w.org/advanced-custom-fields/assets/banner-1544x500.jpg?rev=1729099";}s:11:"banners_rtl";a:0:{}}s:9:"hello.php";O:8:"stdClass":9:{s:2:"id";s:25:"w.org/plugins/hello-dolly";s:4:"slug";s:11:"hello-dolly";s:6:"plugin";s:9:"hello.php";s:11:"new_version";s:3:"1.6";s:3:"url";s:42:"https://wordpress.org/plugins/hello-dolly/";s:7:"package";s:58:"https://downloads.wordpress.org/plugin/hello-dolly.1.6.zip";s:5:"icons";a:3:{s:2:"1x";s:63:"https://ps.w.org/hello-dolly/assets/icon-128x128.jpg?rev=969907";s:2:"2x";s:63:"https://ps.w.org/hello-dolly/assets/icon-256x256.jpg?rev=969907";s:7:"default";s:63:"https://ps.w.org/hello-dolly/assets/icon-256x256.jpg?rev=969907";}s:7:"banners";a:2:{s:2:"1x";s:65:"https://ps.w.org/hello-dolly/assets/banner-772x250.png?rev=478342";s:7:"default";s:65:"https://ps.w.org/hello-dolly/assets/banner-772x250.png?rev=478342";}s:11:"banners_rtl";a:0:{}}s:37:"tinymce-advanced/tinymce-advanced.php";O:8:"stdClass":9:{s:2:"id";s:30:"w.org/plugins/tinymce-advanced";s:4:"slug";s:16:"tinymce-advanced";s:6:"plugin";s:37:"tinymce-advanced/tinymce-advanced.php";s:11:"new_version";s:5:"4.6.7";s:3:"url";s:47:"https://wordpress.org/plugins/tinymce-advanced/";s:7:"package";s:65:"https://downloads.wordpress.org/plugin/tinymce-advanced.4.6.7.zip";s:5:"icons";a:3:{s:2:"1x";s:68:"https://ps.w.org/tinymce-advanced/assets/icon-128x128.png?rev=971511";s:2:"2x";s:68:"https://ps.w.org/tinymce-advanced/assets/icon-256x256.png?rev=971511";s:7:"default";s:68:"https://ps.w.org/tinymce-advanced/assets/icon-256x256.png?rev=971511";}s:7:"banners";a:2:{s:2:"1x";s:70:"https://ps.w.org/tinymce-advanced/assets/banner-772x250.png?rev=894078";s:7:"default";s:70:"https://ps.w.org/tinymce-advanced/assets/banner-772x250.png?rev=894078";}s:11:"banners_rtl";a:0:{}}s:33:"wp-user-avatar/wp-user-avatar.php";O:8:"stdClass":9:{s:2:"id";s:28:"w.org/plugins/wp-user-avatar";s:4:"slug";s:14:"wp-user-avatar";s:6:"plugin";s:33:"wp-user-avatar/wp-user-avatar.php";s:11:"new_version";s:5:"2.0.9";s:3:"url";s:45:"https://wordpress.org/plugins/wp-user-avatar/";s:7:"package";s:57:"https://downloads.wordpress.org/plugin/wp-user-avatar.zip";s:5:"icons";a:3:{s:2:"1x";s:67:"https://ps.w.org/wp-user-avatar/assets/icon-128x128.png?rev=1755722";s:2:"2x";s:67:"https://ps.w.org/wp-user-avatar/assets/icon-256x256.png?rev=1755722";s:7:"default";s:67:"https://ps.w.org/wp-user-avatar/assets/icon-256x256.png?rev=1755722";}s:7:"banners";a:2:{s:2:"1x";s:68:"https://ps.w.org/wp-user-avatar/assets/banner-772x250.png?rev=882713";s:7:"default";s:68:"https://ps.w.org/wp-user-avatar/assets/banner-772x250.png?rev=882713";}s:11:"banners_rtl";a:0:{}}}}', 'no');
 
 -- --------------------------------------------------------
 
@@ -342,7 +354,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (103, 31, 'position', 'acf_after_title'),
 (104, 31, 'layout', 'no_box'),
 (105, 31, 'hide_on_screen', ''),
-(106, 31, '_edit_lock', '1515467294:1'),
+(106, 31, '_edit_lock', '1515621118:1'),
 (107, 32, 'resumo', 'Um espaço para analisar criticamente os avanços tecnológicos e seus impactos na sociedade.'),
 (108, 32, '_resumo', 'field_5a52da2980a7b'),
 (109, 27, 'resumo', 'Um espaço para analisar criticamente os avanços tecnológicos e seus impactos na sociedade.'),
@@ -383,7 +395,29 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (144, 41, 'email_contato', 'suporte@disrupcaocognitiva.com.br'),
 (145, 41, '_email_contato', 'field_5a5431015846d'),
 (146, 27, 'email_contato', 'suporte@disrupcaocognitiva.com.br'),
-(147, 27, '_email_contato', 'field_5a5431015846d');
+(147, 27, '_email_contato', 'field_5a5431015846d'),
+(148, 42, '_edit_last', '1'),
+(149, 42, '_thumbnail_id', '12'),
+(152, 43, 'subtitulo_post', ''),
+(153, 43, '_subtitulo_post', 'field_5a516efba679e'),
+(154, 42, 'subtitulo_post', ''),
+(155, 42, '_subtitulo_post', 'field_5a516efba679e'),
+(156, 42, '_edit_lock', '1515621363:1'),
+(157, 44, '_edit_last', '1'),
+(158, 44, '_edit_lock', '1515621206:1'),
+(159, 44, '_thumbnail_id', '15'),
+(162, 45, 'subtitulo_post', ''),
+(163, 45, '_subtitulo_post', 'field_5a516efba679e'),
+(164, 44, 'subtitulo_post', ''),
+(165, 44, '_subtitulo_post', 'field_5a516efba679e'),
+(170, 42, '_wp_trash_meta_status', 'publish'),
+(171, 42, '_wp_trash_meta_time', '1515621506'),
+(172, 42, '_wp_desired_post_slug', 'o-que-e-ibm-watson-2'),
+(173, 44, '_wp_trash_meta_status', 'publish'),
+(174, 44, '_wp_trash_meta_time', '1515621509'),
+(175, 44, '_wp_desired_post_slug', 'o-que-e-ibm-watson-3'),
+(176, 46, '_edit_last', '1'),
+(177, 46, '_edit_lock', '1515629255:1');
 
 -- --------------------------------------------------------
 
@@ -468,7 +502,13 @@ INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post
 (38, 1, '2018-01-09 00:48:58', '2018-01-09 02:48:58', '', 'Twitter', '', 'publish', 'closed', 'closed', '', 'twitter', '', '', '2018-01-09 00:48:58', '2018-01-09 02:48:58', '', 0, 'http://localhost/wp_disrupcao_cognitiva/?post_type=redes_sociais&#038;p=38', 0, 'redes_sociais', '', 0),
 (39, 1, '2018-01-09 01:01:29', '0000-00-00 00:00:00', '', 'Rascunho automático', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2018-01-09 01:01:29', '0000-00-00 00:00:00', '', 0, 'http://localhost/wp_disrupcao_cognitiva/?post_type=redes_sociais&p=39', 0, 'redes_sociais', '', 0),
 (40, 1, '2018-01-09 01:02:43', '0000-00-00 00:00:00', '', 'Rascunho automático', '', 'auto-draft', 'closed', 'closed', '', '', '', '', '2018-01-09 01:02:43', '0000-00-00 00:00:00', '', 0, 'http://localhost/wp_disrupcao_cognitiva/?post_type=redes_sociais&p=40', 0, 'redes_sociais', '', 0),
-(41, 1, '2018-01-09 01:04:05', '2018-01-09 03:04:05', 'Um espaço para analisar criticamente os avanços tecnológicos e seus impactos na sociedade.', 'Sobre nós', '', 'inherit', 'closed', 'closed', '', '27-revision-v1', '', '', '2018-01-09 01:04:05', '2018-01-09 03:04:05', '', 27, 'http://localhost/wp_disrupcao_cognitiva/27-revision-v1/', 0, 'revision', '', 0);
+(41, 1, '2018-01-09 01:04:05', '2018-01-09 03:04:05', 'Um espaço para analisar criticamente os avanços tecnológicos e seus impactos na sociedade.', 'Sobre nós', '', 'inherit', 'closed', 'closed', '', '27-revision-v1', '', '', '2018-01-09 01:04:05', '2018-01-09 03:04:05', '', 27, 'http://localhost/wp_disrupcao_cognitiva/27-revision-v1/', 0, 'revision', '', 0),
+(42, 1, '2018-01-10 19:55:09', '2018-01-10 21:55:09', '', 'O que é IBM Watson? 2', '', 'trash', 'open', 'open', '', 'o-que-e-ibm-watson-2__trashed', '', '', '2018-01-10 19:58:26', '2018-01-10 21:58:26', '', 0, 'http://localhost/wp_disrupcao_cognitiva/?p=42', 0, 'post', '', 0),
+(43, 1, '2018-01-10 19:55:09', '2018-01-10 21:55:09', '', 'O que é IBM Watson? 2', '', 'inherit', 'closed', 'closed', '', '42-revision-v1', '', '', '2018-01-10 19:55:09', '2018-01-10 21:55:09', '', 42, 'http://localhost/wp_disrupcao_cognitiva/42-revision-v1/', 0, 'revision', '', 0),
+(44, 1, '2018-01-10 19:55:27', '2018-01-10 21:55:27', '', 'O que é IBM Watson? 3', '', 'trash', 'open', 'open', '', 'o-que-e-ibm-watson-3__trashed', '', '', '2018-01-10 19:58:29', '2018-01-10 21:58:29', '', 0, 'http://localhost/wp_disrupcao_cognitiva/?p=44', 0, 'post', '', 0),
+(45, 1, '2018-01-10 19:55:27', '2018-01-10 21:55:27', '', 'O que é IBM Watson? 3', '', 'inherit', 'closed', 'closed', '', '44-revision-v1', '', '', '2018-01-10 19:55:27', '2018-01-10 21:55:27', '', 44, 'http://localhost/wp_disrupcao_cognitiva/44-revision-v1/', 0, 'revision', '', 0),
+(46, 1, '2018-01-10 22:07:34', '2018-01-11 00:07:34', '', 'Busca', '', 'private', 'closed', 'closed', '', 'busca', '', '', '2018-01-10 22:07:34', '2018-01-11 00:07:34', '', 0, 'http://localhost/wp_disrupcao_cognitiva/?page_id=46', 0, 'page', '', 0),
+(47, 1, '2018-01-10 22:07:34', '2018-01-11 00:07:34', '', 'Busca', '', 'inherit', 'closed', 'closed', '', '46-revision-v1', '', '', '2018-01-10 22:07:34', '2018-01-11 00:07:34', '', 46, 'http://localhost/wp_disrupcao_cognitiva/46-revision-v1/', 0, 'revision', '', 0);
 
 -- --------------------------------------------------------
 
@@ -542,7 +582,11 @@ INSERT INTO `wp_term_relationships` (`object_id`, `term_taxonomy_id`, `term_orde
 (14, 1, 0),
 (14, 5, 0),
 (14, 6, 0),
-(14, 11, 0);
+(14, 11, 0),
+(42, 1, 0),
+(42, 6, 0),
+(44, 1, 0),
+(44, 6, 0);
 
 -- --------------------------------------------------------
 
@@ -618,7 +662,7 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (23, 1, 'wp_user-settings', 'libraryContent=browse&advImgDetails=show'),
 (24, 1, 'wp_user-settings-time', '1515291609'),
 (26, 1, 'wp_user_avatar', '25'),
-(28, 1, 'session_tokens', 'a:2:{s:64:"cfba9cf8644c870e398e2a8db2ea396c822fad241876221c8b28bbfaac1b8d0e";a:4:{s:10:"expiration";i:1515469895;s:2:"ip";s:3:"::1";s:2:"ua";s:114:"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36";s:5:"login";i:1515297095;}s:64:"8065960260d4b62778c2b6a3b8ea25bfb7b49896ef54be0ac72c463d51ec697b";a:4:{s:10:"expiration";i:1515624060;s:2:"ip";s:3:"::1";s:2:"ua";s:114:"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36";s:5:"login";i:1515451260;}}'),
+(28, 1, 'session_tokens', 'a:1:{s:64:"d13e74e22150876dfc1c136afd31b9b94dc1269a5ef861c64ba711b6bea50d64";a:4:{s:10:"expiration";i:1515801028;s:2:"ip";s:3:"::1";s:2:"ua";s:114:"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36";s:5:"login";i:1515628228;}}'),
 (29, 1, 'closedpostboxes_page', 'a:0:{}'),
 (30, 1, 'metaboxhidden_page', 'a:6:{i:0;s:5:"acf_5";i:1;s:10:"postcustom";i:2;s:16:"commentstatusdiv";i:3;s:11:"commentsdiv";i:4;s:7:"slugdiv";i:5;s:9:"authordiv";}');
 
@@ -759,7 +803,7 @@ ALTER TABLE `wp_users`
 -- AUTO_INCREMENT for table `wp_commentmeta`
 --
 ALTER TABLE `wp_commentmeta`
-  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `wp_comments`
 --
@@ -774,17 +818,17 @@ ALTER TABLE `wp_links`
 -- AUTO_INCREMENT for table `wp_options`
 --
 ALTER TABLE `wp_options`
-  MODIFY `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=287;
+  MODIFY `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=308;
 --
 -- AUTO_INCREMENT for table `wp_postmeta`
 --
 ALTER TABLE `wp_postmeta`
-  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
+  MODIFY `meta_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=178;
 --
 -- AUTO_INCREMENT for table `wp_posts`
 --
 ALTER TABLE `wp_posts`
-  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `ID` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 --
 -- AUTO_INCREMENT for table `wp_termmeta`
 --

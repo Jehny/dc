@@ -1,0 +1,114 @@
+
+@media screen and (width: 1024px) {
+	#menu {height: 4.5%;}
+	.container-fluid {
+		padding-right: 4%;
+		padding-left: 4%;
+	}
+	@media screen and (min-width: 768px) {
+		#menu {height: 6.5%;}
+	}
+}
+
+
+
+@media screen and (width: 812px) {
+	.container-fluid {padding-right: 2%; padding-left: 3%;}
+	#menu {height: 12.5%;}
+	header .login {margin-top: 3%;}
+	.busca {padding-left: 0;}
+	.busca .search {
+	    width: 45%;
+	    padding-right: 0;
+	    padding-left: 0;
+	}
+	.busca .search input {
+		width: 67%;
+	}
+	.busca .search button i {font-size: 1.3em;}
+	.busca .redes {
+		text-align: right;
+		width: 54%;
+	}
+	.busca .search .mobile_busca {margin-top: -6px;}
+	.busca .search .mobile_busca i {font-size: 1.8em;}
+	header .login {margin-top: 4%;}
+} 
+
+
+@media screen and (max-width: 768px) {
+	.container-fluid {
+	    padding-right: 4%;
+	    padding-left: 4%;
+	}
+	header .login {margin-top: 6%;}
+	#banner .texto h2 {font-size: 26px;}
+	#banner .texto h3 {font-size: 16px;}
+	#menu ul {padding-top: 4.4%;}
+	.busca {padding-right: 0; padding-left: 0;padding-top: 3.4%;}
+	.busca .redes {
+	    padding-right: 0;
+	}
+	.busca .search {padding-right: 15px;}
+	.busca .search .mobile_busca { margin-top: 2px; color: #A06000; }
+	.busca .search .mobile_busca i {color: #A06000; font-size: 1.5em;}
+	.artigo {padding-right: 0;}
+	.posts .conteudo .img_destaque img {
+		width: 100%;
+    	height: 100px;
+	}
+
+	.posts .conteudo .titulo a, .posts .conteudo .titulo a:hover {
+		font-size: 26px;
+	}
+	.posts .conteudo .subtitulo {font-size: 16px;}
+	.detalhe_post {padding-right: 0; padding-left: 0;}
+	.detalhe_post .titulo {font-size: 26px;}
+	.corpo img {width: 100%;}
+	.list_card_single {width: 100% !important;}
+	.mobile-xs {display: none;}
+
+
+	@media screen and (width: 640px) {
+		#menu {height: 13.5%;}
+		#menu ul, .busca {padding-top: 2.4%;}
+		header .login {margin-top: 4%;}
+	}
+		
+}
+
+@media screen and (width: 736px) {
+	#menu {height: 12.5%;}
+	#menu ul, .busca {padding-top: 2.4%;}
+	header .login {margin-top: 4%;}
+}
+
+@media screen and (max-width: 732px) {
+	#menu {height: 13.5%;}
+	#menu ul, .busca {padding-top: 2%;}
+	header .login {margin-top: 4%;}
+
+	@media screen and (width: 412px) {
+		#menu {height: 7.5%;}
+		
+	}
+
+}
+@media screen and (width: 414px) {
+	#menu {height: 7.5%;}
+	header .login {margin-top: 6%;}
+}
+
+@media screen and (width: 375px) {
+	#menu {height: 7.5%;}
+	header .login {margin-top: 6%;}
+	#menu ul, .busca {padding-top: 3%;}
+}
+
+
+
+
+
+
+
+

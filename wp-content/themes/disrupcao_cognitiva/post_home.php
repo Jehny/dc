@@ -24,7 +24,7 @@
 					<div class="img_destaque">
 						<?php 
 							if ( has_post_thumbnail() ) {
-								the_post_thumbnail('full'); 
+								the_post_thumbnail('img-responsive'); 
 							}
 						?>
 					</div>
@@ -32,7 +32,7 @@
 						<p class="titulo"><a href="<?php echo esc_url(get_permalink(get_the_ID()));?>" title="O que é IBM Watson?"><?php echo the_title(); ?></a></p>
 						<p class="subtitulo"><?php echo $subtitulo; ?></p>
 					</div>
-					<p class="read"><a href="<?php echo esc_url(get_permalink(get_the_ID()));?>" title="">Read more...</a></p>
+					<p class="read"><a href="<?php echo esc_url(get_permalink(get_the_ID()));?>" title="">Leia mais...</a></p>
 				</div>
 				
 			</div>
@@ -42,7 +42,9 @@
 			?>
 		</div>
 	</div>
-	<div class="col-md-4 sobre">
+
+	<!-- Sobre da Home -->
+	<div class="col-md-4 sobre hidden-xs hidden-sm">
 		<?php  $page = get_page_by_title('Sobre nós'); 
 				$id = $page->ID; 
 				$resumo = get_field('resumo', $id);

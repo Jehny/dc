@@ -122,12 +122,15 @@ header .logo { padding-left: 0; }
 }
 
 #banner {
-	background: url('../img/banner.png') 50% 45%; 
+	/* background: url('../img/banner.png') 50% 45% no-repeat;  */
 	height: 180px; 
 	width: 100%; 
+	position: relative;
 }
 
-#banner .texto {}
+#banner .imagem {}
+#banner .imagem img {height: 180px;  width: 100%;}
+#banner .texto {position: absolute; top: 3%;}
 #banner .texto h2 {
 	font-family: 'open_sans';
 	color: white;
@@ -158,11 +161,10 @@ header .logo { padding-left: 0; }
 
 #menu .itens {padding-left: 0;}
 
-.busca {padding-top: 1.4%;}
-.busca .search{}
+.busca {padding-top: 1.4%; padding-right: 0;}
+.busca .search{padding-right: 0;}
 .busca .search input {
-	width: 79%;
-	width: 79%;
+	width: 75%;
 	border: none;
 	color: #A06000;
 	background: orange;
@@ -199,10 +201,38 @@ header .logo { padding-left: 0; }
 	vertical-align: middle;
 }
 
-.busca .redes {}
+.busca .redes {padding-right: 0;}
 .busca .redes li { padding-right: 0 !important; border-right: none !important; }
 .busca .redes li a, .busca .redes li a:hover { text-decoration: none; }
 .busca .redes li a i {font-size: 1.5em;}
+
+.page_busca {margin-top: 10%;}
+
+.page_busca input ::-webkit-input-placeholder {
+	font-family: BlinkMacSystemFont,Roboto,Oxygen,Ubuntu,Cantarell,"open_sans","helvetica",sans-serif;
+	color: #959595;
+}
+.page_busca input ::-moz-placeholder {
+	font-family: BlinkMacSystemFont,Roboto,Oxygen,Ubuntu,Cantarell,"open_sans","helvetica",sans-serif;
+	color: #959595;
+}
+.page_busca input :-ms-input-placeholder {
+	font-family: BlinkMacSystemFont,Roboto,Oxygen,Ubuntu,Cantarell,"open_sans","helvetica",sans-serif;
+	color: #959595;
+}
+.page_busca button { 
+	background: transparent;
+    border: none; }
+.page_busca button i {font-size: 2em;}
+.page_busca .input_page_busca {
+	border: none;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+    background: transparent;
+    height: 50px;
+    width: 84%;
+    font-size: 2em;
+}
+
 
 /* LISTAGEM POST HOME */
 .artigo {padding-left: 0; }
@@ -247,6 +277,7 @@ header .logo { padding-left: 0; }
 	font-family:BlinkMacSystemFont,Roboto,Oxygen,Ubuntu,Cantarell,"open_sans","helvetica",sans-serif;
 	color: #7b7b7b;
 }
+/* .mobile_busca {display: none;} */
 .posts .conteudo {}
 .posts .conteudo .img_destaque {}
 .posts .conteudo img {width: 600px; height: 180px;}
@@ -330,7 +361,7 @@ header .logo { padding-left: 0; }
 }
 
 /* LISTAGEM POST CONSULTA */
-.cards { padding-left: 0; margin-top: 4%;     margin-bottom: 6%;}
+.cards { padding-left: 0; margin-top: 4%; margin-bottom: 6%; padding-right: 0;}
 .list_card {
 	overflow: hidden;
 	padding: 0;
@@ -340,11 +371,10 @@ header .logo { padding-left: 0; }
     border-radius: 5px;
     min-height: 315px;
     position: relative;
+    margin-bottom: 4%;
 }
 
-.list_card:last-child {
-	margin-right: 0;
-}
+.list_card:nth-child(3n) {margin-right: 0;}
 
 .list_card img {
 	width: 100%;
@@ -436,6 +466,7 @@ header .logo { padding-left: 0; }
     background: #ececec;
     border-radius: 3px;
     margin-right: 0.5%;
+    margin-bottom: 2%;
 }
 
 .meta_tags li:hover { background: #e2e1e1; }

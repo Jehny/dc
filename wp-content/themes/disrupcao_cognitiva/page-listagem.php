@@ -31,7 +31,7 @@ include "header2.php";
 				 while ($query->have_posts()) {
 				 	$query->the_post();  
 		?>
-		<div class="list_card col-md-4">
+		<div class="list_card col-md-4 list_card_single">
 			<a href="<?php echo esc_url(get_permalink(get_the_ID()));?>">
 			<?php 
 				if ( has_post_thumbnail() ) {
@@ -61,4 +61,4 @@ include "header2.php";
 	</div>
 </div>
 
-<?php include "footer.php"; ?>
+<?php //include "footer.php"; ?>

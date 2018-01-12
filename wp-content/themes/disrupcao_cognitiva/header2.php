@@ -5,6 +5,7 @@
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/bootstrap.min.css" type="text/css" />
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/dc.css" type="text/css" />
 		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/icones.css" type="text/css" />
+		<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/medias.css" type="text/css" />
 		
 		<script src="<?php bloginfo('template_url'); ?>/js/jquery-3.0.0.min.js"></script>
 		<script src="<?php bloginfo('template_url'); ?>/js/bootstrap.min.js"></script>
@@ -20,13 +21,13 @@
 	<body>
 		<header id="header2" class="row-fluid">
 			<div class="container-fluid">
-				<div class="col-md-8 logo">
+				<div class="col-md-8 col-xs-8 logo">
 					<h1>
 						<a href="<?php echo get_home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/img/titulo.png"></a>
 					</h1>	
 				</div>
-				<div class="col-md-4 login">
-					<a href="">Sign in</a>
+				<div class="col-md-4 col-xs-4 login">
+					<a href="wp-admin">Sign in</a>
 				</div>					
 			</div>
 		</header>

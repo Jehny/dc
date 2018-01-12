@@ -5,7 +5,7 @@
 		$teste = "<input type='hidden' id='enviado' />";
 		$message = "Seu comentário foi enviado com sucesso!";
 	}else {
-		echo "não encontrou o submit";
+		// echo "não encontrou o submit";
 	}
 
 ?>
@@ -76,7 +76,7 @@
 							 while (have_posts()) {
 							 	the_post();  
 					?>
-					<div class="list_card col-md-4">
+					<div class="list_card list_card_single col-md-4">
 						<a href="<?php echo esc_url(get_permalink(get_the_ID()));?>">
 						<?php 
 							if ( has_post_thumbnail() ) {
@@ -165,5 +165,5 @@
 </div>
 
 <?php
-	include "footer.php";
+	// include "footer.php";
 ?>

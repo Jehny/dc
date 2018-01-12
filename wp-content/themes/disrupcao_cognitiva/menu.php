@@ -21,15 +21,17 @@
 
 if(isset($_POST['submit'])){
 	$word = $_POST['pesquisa'];
-	redirect_to("listagem?key=".$word);
+	$home = get_home_url();
+	redirect_to($home."/listagem?key=".$word);
 }
+$home = get_home_url();
 
 ?>
 
 <div id="menu">
 
 	<div class="container-fluid">
-		<ul class="list-inline col-md-8 itens">
+		<ul class="list-inline col-md-8 col-xs-8 itens">
 			<li><a href="<?php echo get_home_url(); ?>" title="Home">home</a></li>
 			<?php foreach ( $pages as $page ) { ?>			
 			<li><a href="<?php echo get_page_link( $page->ID )?>" title="Sobre"><?php echo $page->post_title; ?></a></li>
@@ -60,14 +62,17 @@ if(isset($_POST['submit'])){
 				$redes = get_posts($args);
 
 		?>
-		<div class="busca col-md-4">
-			<div class="search col-md-8">
-				<form action="" method="POST" accept-charset="utf-8">
-					<input type="text" name="pesquisa" title="pesquisa" placeholder="Consultar">
-					<button type="submit" name="submit"><i class="icon-search3"></i></button>
+		<div class="busca col-md-4 col-xs-4">
+			<div class="search col-md-8 col-xs-2">
+				<form action="" method="POST" accept-charset="utf-8" class="hidden-xs">
+					<input type="text" name="pesquisa" title="pesquisa" placeholder="Consultar" required class="mobile-xs">
+					<button type="submit" class="mobile-xs" name="submit"><i class="icon-search3"></i></button>
 				</form>
-			</div>
-			<div class="redes col-md-4">
+				<a href="<?php echo $home; ?>/busca" class="mobile_busca visible-xs visible-sm"><i class="icon-search3"></i></a>
+
+			</div>		
+
+			<div class="redes col-md-4 col-xs-8">
 				<ul class="list-inline">
 					<?php if($redes){ 
 							foreach ($redes as $r){
