@@ -1,3 +1,6 @@
+@media screen and (max-width: 1336px) and (min-width: 1024px) {
+	#menu {height: 4.5%;}
+}
 
 @media screen and (width: 1024px) {
 	#menu {height: 4.5%;}
@@ -16,7 +19,8 @@
 	.container-fluid {padding-right: 2%; padding-left: 3%;}
 	#menu {height: 12.5%;}
 	header .login {margin-top: 3%;}
-	.busca {padding-left: 0;}
+	.busca {padding-left: 0; text-align: right;}
+
 	.busca .search {
 	    width: 45%;
 	    padding-right: 0;
@@ -30,9 +34,10 @@
 		text-align: right;
 		width: 54%;
 	}
-	.busca .search .mobile_busca {margin-top: -6px;}
-	.busca .search .mobile_busca i {font-size: 1.8em;}
+	.busca .search .mobile_busca {margin-top: -11px;}
+	.busca .search .mobile_busca i {font-size: 1.8em; color: #A06000;}
 	header .login {margin-top: 4%;}
+	.mobile-xs {display: none;}
 } 
 
 
@@ -45,11 +50,11 @@
 	#banner .texto h2 {font-size: 26px;}
 	#banner .texto h3 {font-size: 16px;}
 	#menu ul {padding-top: 4.4%;}
-	.busca {padding-right: 0; padding-left: 0;padding-top: 3.4%;}
+	.busca {padding-right: 0; padding-left: 0;padding-top: 3.4%; text-align: right;}
 	.busca .redes {
-	    padding-right: 0;
+	    padding-right: 0; text-align: right;
 	}
-	.busca .search {padding-right: 15px;}
+	.busca .search {padding-right: 15px; text-align: right;}
 	.busca .search .mobile_busca { margin-top: 2px; color: #A06000; }
 	.busca .search .mobile_busca i {color: #A06000; font-size: 1.5em;}
 	.artigo {padding-right: 0;}
@@ -67,6 +72,12 @@
 	.corpo img {width: 100%;}
 	.list_card_single {width: 100% !important;}
 	.mobile-xs {display: none;}
+	.compartilhamento_mobile {display: block !important;}
+	.redes_mobile {text-align: right;}
+	.redes_mobile li a {text-decoration: none;}
+	.redes_mobile li i {font-size: 2em; color: #A06000;}
+	.detalhe_post { margin-top: 3%;}
+	/* .detalhe_post .posts {width: 70%; float: left; margin-bottom: 5%;} */
 
 
 	@media screen and (width: 640px) {

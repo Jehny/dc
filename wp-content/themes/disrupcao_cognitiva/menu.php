@@ -63,7 +63,7 @@ $home = get_home_url();
 
 		?>
 		<div class="busca col-md-4 col-xs-4">
-			<div class="search col-md-8 col-xs-2">
+			<div class="search col-md-8 col-xs-4">
 				<form action="" method="POST" accept-charset="utf-8" class="hidden-xs">
 					<input type="text" name="pesquisa" title="pesquisa" placeholder="Consultar" required class="mobile-xs">
 					<button type="submit" class="mobile-xs" name="submit"><i class="icon-search3"></i></button>

@@ -1,5 +1,7 @@
 <?php
 	include "header2.php";
+	$titulo = "";
+	$link = "";
 
 	if(isset($_POST['submit'])){
 		$teste = "<input type='hidden' id='enviado' />";
@@ -10,7 +12,17 @@
 
 ?>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.11';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 	<div class="row-fluid">
+		
 		<section class="container-fluid">
 			<div class="col-xs-12 col-sm-12 col-md-12">
 
@@ -19,26 +31,36 @@
 						print_r(the_post());  
 						$id = get_the_ID(); 
 						$subtitulo = get_field('subtitulo_post', $id);
+						$titulo = get_the_title();
+						$link = esc_url(get_permalink(get_the_ID()));
 			?>
 					<div class="detalhe_post">
-						<div class="posts">
-							<!-- Autor -->
-							<div class="autor">
-								<div class="imagem">
-									<p><?php 
-										echo get_wp_user_avatar(); ?></p>
+						<div class="row-fluid">
+							<div class="posts col-md-12 col-lg-12 col-sm-6 col-xs-8">
+								<!-- Autor -->
+								<div class="autor">
+									<div class="imagem">
+										<p><?php 
+											echo get_wp_user_avatar(); ?></p>
+									</div>
+									<div class="dados">
+										<p class="nome"><?php the_author(); ?></p>
+										<p class="info"><?php the_time('F j, Y'); ?></p>
+									</div>
 								</div>
-								<div class="dados">
-									<p class="nome"><?php the_author(); ?></p>
-									<p class="info"><?php the_time('F j, Y'); ?></p>
-								</div>
+								
+							</div>
+							<div class="redes_mobile compartilhamento_mobile visible-xs-block visible-sm-block hidden-md hidden-lg">
+								<ul class="list-inline">
+									<li><a href="javascript:void(0);" onclick="window.open('http://www.facebook.com/sharer.php?u=<?php echo $link; ?>','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');"><i class="icon-facebook-with-circle"></i></a></li>
+									<li><a href="javascript:void(0);" onclick="window.open('http://twitter.com/?status=<?php echo $link; ?>','twitter', 'toolbar=0, status=0, width=650, height=450')" ><i class="icon-twitter-with-circle"></i></a></li>
+								</ul>
 							</div>
 							
 						</div>
 						<div class="row-fluid">
 							<div>
-								<h1 class="titulo"> <?php echo the_title(); ?>
-								 </h1>
+								<h1 class="titulo"><?php echo the_title(); ?></h1>
 								 <p class="subtitulo"><?php echo $subtitulo; ?></p>
 							</div>
 						</div>
@@ -67,6 +89,12 @@
 			<?php }
 				} 
 			?>
+			<div class="redes_web compartilhamento_web visible-lg-block visible-md-block hidden-xs hidden-sm">
+				<ul>
+					<li><a href="javascript:void(0);" onclick="window.open('http://www.facebook.com/sharer.php?u=<?php echo $link; ?>','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');"><i class="icon-facebook-with-circle"></i></a></li>
+					<li><a href="javascript:void(0);" onclick="window.open('http://twitter.com/?status=<?php echo $link; ?>','twitter', 'toolbar=0, status=0, width=650, height=450')" ><i class="icon-twitter-with-circle"></i></a></li>
+				</ul>
+			</div>
 
 			<!-- Listagem de post -->
 			<div class="row-fluid">
@@ -76,7 +104,7 @@
 							 while (have_posts()) {
 							 	the_post();  
 					?>
-					<div class="list_card list_card_single col-md-4">
+					<div class="list_card list_card_single col-md-4 col-sm-4">
 						<a href="<?php echo esc_url(get_permalink(get_the_ID()));?>">
 						<?php 
 							if ( has_post_thumbnail() ) {

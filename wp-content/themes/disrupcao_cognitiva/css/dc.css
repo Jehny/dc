@@ -432,6 +432,11 @@ header .logo { padding-left: 0; }
     padding-top: 3%;
 }
 
+.detalhe_post .posts{
+	margin-bottom: 5%;
+	padding-left: 0;
+}
+
 .detalhe_post .titulo {
 	font-family: 'lucida', Geneva,Arial,sans-serif;
 	font-size: 34px;
@@ -529,6 +534,9 @@ header .logo { padding-left: 0; }
 }
 
 #commentform .comment-form-url {display: none;}
+#respond {
+    padding-bottom: 7%;
+}
 
 /* FOOTER */
 footer {
@@ -536,3 +544,11 @@ footer {
 	height: 70px;
 	margin-top: 5%;
 }
+
+/* .compartilhamento_mobile {display: none;} */
+.redes_web {position: fixed; top: 25%;}
+.redes_web li a {text-decoration: none;}
+.redes_web li a:hover {text-decoration: none;}
+.redes_web li {list-style: none; margin-bottom: 7px;}
+.redes_web li i {font-size: 2em; color: #A06000;}
+.redes_web li i:hover {font-size: 2.2em; color: #bb7204;}
