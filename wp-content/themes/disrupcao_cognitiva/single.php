@@ -2,13 +2,20 @@
 	include "header2.php";
 	$titulo = "";
 	$link = "";
-
-	if(isset($_POST['submit'])){
-		$teste = "<input type='hidden' id='enviado' />";
-		$message = "Seu comentário foi enviado com sucesso!";
-	}else {
-		// echo "não encontrou o submit";
-	}
+	$server = $_SERVER['SERVER_NAME'];
+	$endereco = $_SERVER ['REQUEST_URI'];
+	
+	$comment =  wp_handle_comment_submission( wp_unslash( $_POST ));
+	// echo $comment->comment_ID;
+	$enderco = get_comment_link( $comment );
+	// print_r($comment);
+	// echo $comment->comment_ID;
+	
+	// if(urlParametro('comment')){
+	// 	$end = urlParametro('comment');
+	// 	$teste = "<input type='hidden' id='n_enviado' value ='". $end ."' />";
+	// 	$message = "Seu comentário foi enviado com sucesso!";
+	// }
 
 ?>
 
@@ -153,6 +160,7 @@
 			<?php if(isset($teste)){ ?>
 				<div class="alert alert-warning alert-dismissible fade in" role="alert">
 			      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+			      <p>O campo deve ser preenchido!</p>
 			    </div>
 		    <?php }?>
 			<?php 
@@ -186,7 +194,7 @@
         <?php if(isset($message)){ echo $message; } ?>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-vermelho" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Fechar</button>
       </div>
     </div>
   </div>

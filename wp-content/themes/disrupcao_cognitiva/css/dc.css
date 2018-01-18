@@ -546,9 +546,12 @@ footer {
 }
 
 /* .compartilhamento_mobile {display: none;} */
-.redes_web {position: fixed; top: 25%;}
+.redes_web {position: fixed; top: 25%; left: 6%;}
 .redes_web li a {text-decoration: none;}
 .redes_web li a:hover {text-decoration: none;}
 .redes_web li {list-style: none; margin-bottom: 7px;}
 .redes_web li i {font-size: 2em; color: #A06000;}
 .redes_web li i:hover {font-size: 2.2em; color: #bb7204;}
+.byuser {
+    margin-bottom: 2%;
+}

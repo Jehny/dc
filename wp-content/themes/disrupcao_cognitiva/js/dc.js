@@ -16,4 +16,5 @@ $(document).ready(function(){
     $('#email').val("");
     $('#url').val("");
     $("#comment").val("");
+
 });

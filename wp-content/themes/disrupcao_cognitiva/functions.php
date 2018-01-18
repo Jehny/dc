@@ -127,5 +127,30 @@ function redirect_to( $location = NULL ) {
 	}
 }
 
+function getComment(){
+	$comment = wp_handle_comment_submission( wp_unslash( $_POST ) );
+	$endereco = get_comment_link( $comment );
+}
+
+function urlParametro($arg){
+	$server = $_SERVER['SERVER_NAME'];
+	$endereco = $_SERVER ['REQUEST_URI'];
+	$arrayUrl = explode('/', $endereco);
+	// if(strpos($endereco, $arg) !=0){
+	// 	return true;
+	// }else {
+	// 	return $endereco;
+	// }
+	// return $endereco . " ";
+	foreach($arrayUrl as $admin){
+		if($admin == $arg){
+			// return true;
+			echo $admin;
+		}else {
+			echo $admin . " ";
+
+		}
+	}
+}
 
 ?>

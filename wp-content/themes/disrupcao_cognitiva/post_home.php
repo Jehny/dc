@@ -39,7 +39,9 @@
 
 			<?php  }
 				}
+				if ( function_exists( 'pgntn_display_pagination' ) ) pgntn_display_pagination( 'posts' );
 			?>
+
 		</div>
 	</div>
 
