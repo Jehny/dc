@@ -64,11 +64,12 @@ $home = get_home_url();
 		?>
 		<div class="busca col-md-4 col-xs-4">
 			<div class="search col-md-8 col-xs-4">
-				<form action="" method="POST" accept-charset="utf-8" class="hidden-xs">
-					<input type="text" name="pesquisa" title="pesquisa" placeholder="Consultar" required class="mobile-xs">
-					<button type="submit" class="mobile-xs" name="submit"><i class="icon-search3"></i></button>
+				<form action="" method="POST" accept-charset="utf-8" class="form_">
+					<input type="text" name="pesquisa" title="pesquisa" placeholder="Consultar" required class="mobile-xs hidden-xs">
+					<button type="submit" class="mobile-xs hidden-xs" name="submit"><i class="icon-search3"></i></button>
+					<a href="<?php echo $home; ?>/busca" class="mobile_busca visible-xs visible-sm"><i class="icon-search3"></i></a>
 				</form>
-				<a href="<?php echo $home; ?>/busca" class="mobile_busca visible-xs visible-sm"><i class="icon-search3"></i></a>
+				
 
 			</div>		
 

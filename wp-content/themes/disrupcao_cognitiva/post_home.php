@@ -2,10 +2,21 @@
 	<div class="col-md-8 artigo">
 		<div class="artigo">
 			<h4>Nossas últimas notícias...</h4>
-			<?php 
-				if (have_posts()) {
-					 while (have_posts()) {
-						 print_r(the_post()); 
+			<?php
+				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+				$curpage = $paged ? $paged : 1;
+				$temp =  $query;
+  				$query = null;
+
+				$args_1 = array('post_status' => 'publish');
+
+				$query = new WP_Query( $args_1 );
+
+				$query -> query('post_type=post&posts_per_page=10'.'&paged='.$paged);
+
+				if ($query->have_posts()) {
+					 while ($query->have_posts()) {
+						 print_r($query->the_post()); 
 						$id = get_the_ID(); 
 						$subtitulo = get_field('subtitulo_post', $id);
 			?>
@@ -34,11 +45,34 @@
 					</div>
 					<p class="read"><a href="<?php echo esc_url(get_permalink(get_the_ID()));?>" title="">Leia mais...</a></p>
 				</div>
-				
+
 			</div>
 
-			<?php  }
-				}
+			<?php  }//end while
+					if($query->max_num_pages > 1){
+
+					
+					?>
+					<nav aria-label="Page navigation example">
+					  <ul class="pagination">
+					    <li class="page-item page-link"><?php previous_posts_link('Anterior', $query->max_num_pages) ?></li>
+					    <?php
+					    	for($i=1;$i<=$query->max_num_pages;$i++){
+					    		$class = "";
+					    		if($i == $curpage){
+					    			$class="active";
+					    		}
+					    	    echo '<li class="page-item '.$class.'"><a class="page link" href="'.get_pagenum_link($i).'">'.$i.'</a></li>';
+					    	}
+					    ?>
+					    <li class="page-item page-link"><?php next_posts_link('Próximo', $query->max_num_pages) ?></li>
+					  </ul>
+					</nav>
+					<?php 
+					}							
+					?>
+			<?php	} // end if
+				$query = null; $query = $temp; 
 				if ( function_exists( 'pgntn_display_pagination' ) ) pgntn_display_pagination( 'posts' );
 			?>
 
@@ -87,7 +121,7 @@
 		<div class="links_contato">
 			<ul class="list-inline">
 				<li><a href="mailto:<?php echo $email; ?>"><i class="icon-envelope"></i></a></li>
-				<?php if($redes){ 
+				<?php if($redes){
 						foreach ($redes as $r){
 							$icone = get_field('classe_icone', $r->ID);
 							$link = get_field('link', $r->ID);
@@ -98,5 +132,6 @@
 			</ul>
 		</div>
 
-	</div>	
+	</div>
+	
 </div>

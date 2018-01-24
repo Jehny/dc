@@ -1,15 +1,15 @@
 @media screen and (max-width: 1336px) and (min-width: 1024px) {
-	#menu {height: 4.5%;}
+	#menu {height: auto;}
 }
 
 @media screen and (width: 1024px) {
-	#menu {height: 4.5%;}
+	#menu {height: auto;}
 	.container-fluid {
 		padding-right: 4%;
 		padding-left: 4%;
 	}
 	@media screen and (min-width: 768px) {
-		#menu {height: 6.5%;}
+		#menu {height: auto;}
 	}
 }
 
@@ -17,7 +17,8 @@
 
 @media screen and (width: 812px) {
 	.container-fluid {padding-right: 2%; padding-left: 3%;}
-	#menu {height: 12.5%;}
+	#menu {height: auto;}
+	.form_ {margin-top: 10%;}
 	header .login {margin-top: 3%;}
 	.busca {padding-left: 0; text-align: right;}
 
@@ -49,7 +50,7 @@
 	header .login {margin-top: 6%;}
 	#banner .texto h2 {font-size: 26px;}
 	#banner .texto h3 {font-size: 16px;}
-	#menu ul {padding-top: 4.4%;}
+	#menu ul {padding-top: 3.4%;}
 	.busca {padding-right: 0; padding-left: 0;padding-top: 3.4%; text-align: right;}
 	.busca .redes {
 	    padding-right: 0; text-align: right;
@@ -81,7 +82,7 @@
 
 
 	@media screen and (width: 640px) {
-		#menu {height: 13.5%;}
+		#menu {height: auto;}
 		#menu ul, .busca {padding-top: 2.4%;}
 		header .login {margin-top: 4%;}
 	}
@@ -89,29 +90,29 @@
 }
 
 @media screen and (width: 736px) {
-	#menu {height: 12.5%;}
+	#menu {height: auto;}
 	#menu ul, .busca {padding-top: 2.4%;}
 	header .login {margin-top: 4%;}
 }
 
 @media screen and (max-width: 732px) {
-	#menu {height: 13.5%;}
+	#menu {height: auto;}
 	#menu ul, .busca {padding-top: 2%;}
 	header .login {margin-top: 4%;}
 
 	@media screen and (width: 412px) {
-		#menu {height: 7.5%;}
+		#menu {height: auto;}
 		
 	}
 
 }
 @media screen and (width: 414px) {
-	#menu {height: 7.5%;}
+	#menu {height: auto;}
 	header .login {margin-top: 6%;}
 }
 
 @media screen and (width: 375px) {
-	#menu {height: 7.5%;}
+	#menu {height: auto;}
 	header .login {margin-top: 6%;}
 	#menu ul, .busca {padding-top: 3%;}
 }

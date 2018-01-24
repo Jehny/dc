@@ -4,13 +4,19 @@
 	$link = "";
 	$server = $_SERVER['SERVER_NAME'];
 	$endereco = $_SERVER ['REQUEST_URI'];
-	
-	$comment =  wp_handle_comment_submission( wp_unslash( $_POST ));
-	// echo $comment->comment_ID;
-	$enderco = get_comment_link( $comment );
+	// $comment_id = get_comment_ID();
+	if(isset($_GET['c'])){
+		echo "teste";
+	}
+	// echo $_SERVER['HTTP_HOST'];
+	// echo $endereco;
+	// $comment = wp_handle_comment_submission( wp_unslash( $_POST ) );
+	// $url = get_comment_link( $comment );
+	// urlParametro("comment", $url);
+
 	// print_r($comment);
-	// echo $comment->comment_ID;
-	
+	// echo $comment->comment_ID;	
+	// urlParametro("comment", $url);
 	// if(urlParametro('comment')){
 	// 	$end = urlParametro('comment');
 	// 	$teste = "<input type='hidden' id='n_enviado' value ='". $end ."' />";
@@ -18,6 +24,7 @@
 	// }
 
 ?>
+
 
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -59,8 +66,8 @@
 							</div>
 							<div class="redes_mobile compartilhamento_mobile visible-xs-block visible-sm-block hidden-md hidden-lg">
 								<ul class="list-inline">
-									<li><a href="javascript:void(0);" onclick="window.open('http://www.facebook.com/sharer.php?u=<?php echo $link; ?>','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');"><i class="icon-facebook-with-circle"></i></a></li>
-									<li><a href="javascript:void(0);" onclick="window.open('http://twitter.com/?status=<?php echo $link; ?>','twitter', 'toolbar=0, status=0, width=650, height=450')" ><i class="icon-twitter-with-circle"></i></a></li>
+									<li><a href="javascript:void(0);" title="Compartilhar" onclick="window.open('http://www.facebook.com/sharer.php?u=<?php echo $link; ?>','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');"><i class="icon-facebook-with-circle"></i></a></li>
+									<li><a href="javascript:void(0);" title="Compartilhar" onclick="window.open('http://twitter.com/?status=<?php echo $link; ?>','twitter', 'toolbar=0, status=0, width=650, height=450')" ><i class="icon-twitter-with-circle"></i></a></li>
 								</ul>
 							</div>
 							
@@ -98,8 +105,8 @@
 			?>
 			<div class="redes_web compartilhamento_web visible-lg-block visible-md-block hidden-xs hidden-sm">
 				<ul>
-					<li><a href="javascript:void(0);" onclick="window.open('http://www.facebook.com/sharer.php?u=<?php echo $link; ?>','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');"><i class="icon-facebook-with-circle"></i></a></li>
-					<li><a href="javascript:void(0);" onclick="window.open('http://twitter.com/?status=<?php echo $link; ?>','twitter', 'toolbar=0, status=0, width=650, height=450')" ><i class="icon-twitter-with-circle"></i></a></li>
+					<li><a href="javascript:void(0);" title="Compartilhar" onclick="window.open('http://www.facebook.com/sharer.php?u=<?php echo $link; ?>','ventanacompartir', 'toolbar=0, status=0, width=650, height=450');"><i class="icon-facebook-with-circle"></i></a></li>
+					<li><a href="javascript:void(0);" title="Compartilhar" onclick="window.open('http://twitter.com/?status=<?php echo $link; ?>','twitter', 'toolbar=0, status=0, width=650, height=450')" ><i class="icon-twitter-with-circle"></i></a></li>
 				</ul>
 			</div>
 
